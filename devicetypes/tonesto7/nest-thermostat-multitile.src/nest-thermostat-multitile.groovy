@@ -111,6 +111,20 @@ metadata {
 			state("cool", action:"thermostat.heat", icon: "st.thermostat.cool")
 			state("heat", action:"thermostat.auto", icon: "st.thermostat.heat")
 		}
+        
+        standardTile("thermostatModeOff", "device.thermostatMode", inactiveLabel: true, width:1, height:1, decoration: "flat") {
+			state("off", action:"thermostat.off", icon: "st.thermostat.heating-cooling-off")
+		}
+        standardTile("thermostatModeCool", "device.thermostatMode", inactiveLabel: true, width:1, height:1, decoration: "flat") {
+			state("cool", action:"thermostat.cool", icon: "st.thermostat.cool")
+		}
+        standardTile("thermostatModeHeat", "device.thermostatMode", inactiveLabel: true, width:1, height:1, decoration: "flat") {
+			state("heat", action:"thermostat.heat", icon: "st.thermostat.heat")
+		}
+        standardTile("thermostatModeAuto", "device.thermostatMode", inactiveLabel: true, width:1, height:1, decoration: "flat") {
+			state("auto", action:"thermostat.auto", icon: "st.thermostat.auto")
+		}
+        
 		standardTile("thermostatFanMode", "device.thermostatFanMode", inactiveLabel: true, width:2, height:2, decoration: "flat") {
 			state "auto", action:"thermostat.fanOn", icon: "st.thermostat.fan-auto"
 			state "on", action:"thermostat.fanCirculate", icon: "st.thermostat.fan-on"
@@ -152,7 +166,7 @@ metadata {
         
 		main(["temperature"])
 
-		details(["temperature", "thermostatMode", "nestPresence", "thermostatFanMode", "autoAway", "airFilter", "firmwareVer", "refresh"])
+		details(["temperature", "thermostatModeOff", "thermostatModeCool", "thermostatModeHeat", "thermostatModeAuto", "nestPresence", "thermostatFanMode", "autoAway", "airFilter", "firmwareVer", "leafValue", "rssiTile", "refresh"])
 
 		// really old  details(["temperature", "thermostatMode", "nestPresence", "thermostatFanMode", "temperatureUnit", "refresh"])
 	}
